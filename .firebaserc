@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "mychat-8a024",
+    "default": "mychat-8a024"
+  }
+}

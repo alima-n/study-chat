@@ -1,0 +1,121 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	font-family: 'arial', 'helvetica', sans-serif;
+	font-size: 13px;
+	color: #15406d;
+	background: #c9d4ec;
+}
+#js-app{
+	max-width: 500px;
+	margin: 0 auto;
+	background: #f5f8ff;
+	padding: 25px;
+	border: 1px solid #9aa9ca;
+}
+.user-field{
+	height: 40px;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+}
+input[type=button]{
+	font-size: 14px;
+	color: #15406d;
+}
+
+#sign-in{
+	height: 40px;
+	background: url('/img/google-sign-in.png') no-repeat 10% 50% #fff;
+	padding: 5px 10px 5px 45px;
+	border: 1px solid lightgrey;
+	border-radius: 0;
+}
+#sign-out{
+	height: 40px;
+	width: 40px;
+	margin-left: 20px;
+	background: url('/img/signout.png') no-repeat 10% 50%;
+	border: none;
+	border-radius: 50%;
+}
+#messages{
+	background: #fff;
+	padding: 15px;
+	margin-bottom: 20px;
+	max-height: 400px;
+	overflow: scroll;
+	box-shadow: inset 0px 0px 5px 1px rgba(153,150,153,0.54);
+}
+#messages > .message-block:nth-child(odd){
+	background: #f3e4a63b;
+}
+.message-block{
+	margin-bottom: 10px;
+	padding: 5px 10px;
+}
+.message{
+	margin-bottom: 5px;
+}
+.user-info{
+	height: 20px;
+	line-height: 20px;
+	margin-bottom: 15px;
+}
+#user-pic{
+	display: inline-block;
+	margin-right: 20px;
+	overflow: hidden;
+}
+#user-pic > img {
+	border-radius: 50%;
+	display: block;
+	width: 40px;
+	height: 40px;
+}
+.pic{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+.pic > img{
+	border-radius: 50%;
+	display: block;
+	margin-top: 5px;
+}
+.name{
+	display: inline-block;
+	margin-left: 10px;
+	font-weight: lighter;
+	font-size: 12px;
+	color: #486fa2;
+}
+.message > img {
+	max-width: 300px;
+}
+#message-input{
+	width: 100%;
+	resize: none;
+	border: 1px solid lightgrey;
+	font-size: 14px;
+	padding: 5px;
+	outline: none;
+	margin-bottom: 20px;
+}
+#send-txt{
+	font-size: 14px;
+	height: 40px;
+	border: 1px solid lightgrey;
+	border-radius: 0;
+	color: #15406d;
+}
+#image-form{
+	display: inline-block;
+	float: right;
+}
+#send-img{
+	font-size: 14px;
+	height: 20px;
+}

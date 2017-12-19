@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MyChat</title>
+	<link rel="stylesheet" href="./components/chat/styles.css">
+</head>
+<body>
+
+<div id="js-app"></div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+<script>
+  var config = {
+    apiKey: "AIzaSyAvawigb996-UK4FG-AfGsQRLCzv4EUCqI",
+    authDomain: "mychat-8a024.firebaseapp.com",
+    databaseURL: "https://mychat-8a024.firebaseio.com",
+    projectId: "mychat-8a024",
+    storageBucket: "mychat-8a024.appspot.com",
+    messagingSenderId: "398036559646"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="./components/chat/core.js"></script>
+</body>
+</html>
