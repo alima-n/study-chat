@@ -150,4 +150,4 @@ class Chat {
     }
 }
 
-let chat = new Chat();
+

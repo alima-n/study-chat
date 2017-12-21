@@ -28,7 +28,7 @@ input[type=button]{
 
 #sign-in{
 	height: 40px;
-	background: url('/img/google-sign-in.png') no-repeat 10% 50% #fff;
+	background: url('./../../img/google-sign-in.png') no-repeat 10% 50% #fff;
 	padding: 5px 10px 5px 45px;
 	border: 1px solid lightgrey;
 	border-radius: 0;
@@ -37,7 +37,7 @@ input[type=button]{
 	height: 40px;
 	width: 40px;
 	margin-left: 20px;
-	background: url('/img/signout.png') no-repeat 10% 50%;
+	background: url('./../../img/signout.png') no-repeat 10% 50%;
 	border: none;
 	border-radius: 50%;
 }

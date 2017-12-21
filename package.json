@@ -4,13 +4,15 @@
   "main": "core.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "./node_modules/.bin/eslint components/**/*.js"
+    "lint": "./node_modules/.bin/eslint components/**/*.js",
+    "start": "./node_modules/.bin/static-server ."
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^4.13.1",
-    "eslint-config-google": "^0.9.1"
+    "eslint-config-google": "^0.9.1",
+    "static-server": "^3.0.0"
   },
   "dependencies": {},
   "description": ""

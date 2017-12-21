@@ -9,8 +9,6 @@
 
 <div id="js-app"></div>
 
-
-
 <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
 <script>
   var config = {
@@ -23,6 +21,16 @@
   };
   firebase.initializeApp(config);
 </script>
-<script src="./components/chat/core.js"></script>
+
+<script type="module">
+
+//let chat = new Chat();
+
+  import {App} from './components/app/app.js';
+
+  new App({el: document.querySelector('#js-app')});
+  
+</script>
+
 </body>
 </html>
