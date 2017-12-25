@@ -1,0 +1,11 @@
+div.chat
+    div.chat__header Вы зашли в чат как #{user}
+    ul.chat__messages
+        each message in messages
+            div.message-box.left-img
+                div.chat__title
+                    span.chat__status
+                    span=message.sender
+                    span.chat__time=message.time
+                div.chat__text=message.text
+

@@ -7,8 +7,11 @@ export class Form {
 
     render() {
         this.el.innerHTML = `
-            <form>
-                <textarea></textarea>
+            <form class="clearfix">
+                <textarea placeholder="Введите сообщение"></textarea>
+                <label class="fileContainer">
+                    <input type="file"/>
+                </label>
                 <input type="submit" value="Отправить"/>
             </form>
         `;

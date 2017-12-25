@@ -5,13 +5,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/eslint components/**/*.js",
-    "start": "./node_modules/.bin/static-server ."
+    "start": "./node_modules/.bin/static-server .",
+    "pug": "./node_modules/.bin/pug -c --name-after-file --extension pug.js components/**/*.pug"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^4.13.1",
     "eslint-config-google": "^0.9.1",
+    "pug": "^2.0.0-rc.4",
+    "pug-cli": "^1.0.0-alpha6",
     "static-server": "^3.0.0"
   },
   "dependencies": {},

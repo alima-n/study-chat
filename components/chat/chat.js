@@ -1,27 +1,46 @@
 export class Chat {
-    constructor( {el, data = {messages: []}}) {
+    constructor( {el, data = {messages: [], user: ''}}) {
         this.el = el;
         this.data = data;
+        this.scrollStrategy = 'bottom';
     }
 
-    render() {
-        const messagesHTML = this.data.messages.map(({text, sender}) => {
-            return `
-                <li class="chat__message">
-                    <span class="chat__title">${sender}</span>
-                    <span class="chat__text">${text}</span>
-                </li>
-            `;
-        }).join('');
-        this.el.innerHTML = `
-            <div class="chat">
-                <div class="chat__header"></div>
-                <ul class="chat__messages">${messagesHTML}</ul>
-            </div>
-        `;
-    };
+    render({scroll} = {}) {
+        this._saveScrollTop();
+        this.el.classList.add('chat', 'clearfix');
+        this.el.innerHTML = this._getHTML(this.data);
+        this._restoreScrollTop(scroll);
+    }
 
-    setData(data) {
+    _getHTML() {
+        return chatTemplate(this.data);
+    }
+
+    _saveScrollTop() {
+        let chatBox = this.el.querySelector('.chat__messages');
+        if (chatBox) {
+            this._scrollTop = chatBox.scrollTop;
+        }
+    }
+
+    _restoreScrollTop() {
+        let chatBox = this.el.querySelector('.chat__messages');
+        if (chatBox) {
+            switch (this._scrollStrategy) {
+                case 'bottom':
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                    break;
+                case 'fixed':
+                    chatBox.scrollTop = this._scrollTop;
+            }
+        }
+    }
+
+    setScrollStrategy(strategy) {
+        this._scrollStrategy = strategy;
+    }
+
+    addOne(data) {
         Object.assign(this.data, data);
     }
 }
