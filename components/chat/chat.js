@@ -1,46 +1,49 @@
+import {Auth} from '../../modules/auth-service.js';
+import {Messages} from '../../modules/messages-service.js';
+
 export class Chat {
-    constructor( {el, data = {messages: [], user: ''}}) {
+    constructor( {el, data = {user: ''}}) {
         this.el = el;
         this.data = data;
         this.scrollStrategy = 'bottom';
+        this.auth = new Auth();
+        this.messages = new Messages('messages');
+        this.messages.initMessaging({
+            limitToLast: 10,
+            events: ['child_added', 'child_changed'],
+            callBack: this._getMessages
+        });
     }
 
-    render({scroll} = {}) {
-        this._saveScrollTop();
+    render() {
         this.el.classList.add('chat', 'clearfix');
-        this.el.innerHTML = this._getHTML(this.data);
-        this._restoreScrollTop(scroll);
+        this.el.innerHTML = this._getChatHTML(this.data);
     }
 
-    _getHTML() {
+    _getChatHTML() {
         return chatTemplate(this.data);
     }
 
-    _saveScrollTop() {
-        let chatBox = this.el.querySelector('.chat__messages');
-        if (chatBox) {
-            this._scrollTop = chatBox.scrollTop;
+    _getMessages(data) {
+        let val = data.val();
+        let ul = document.querySelector('.chat__messages');
+        let li = document.getElementById(data.key);
+        if (!li) {
+            let messageBox = document.createElement('li');
+            messageBox.setAttribute('id', data.key);
+            messageBox.classList.add('message-box', 'left-img');
+            let date = new Date(val.time);
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            messageBox.innerHTML = messageTemplate({user: val.user, text: val.text, hours, minutes});
+            ul.append(messageBox);
+            ul.scrollTop = ul.scrollHeight;
         }
     }
 
-    _restoreScrollTop() {
-        let chatBox = this.el.querySelector('.chat__messages');
-        if (chatBox) {
-            switch (this._scrollStrategy) {
-                case 'bottom':
-                    chatBox.scrollTop = chatBox.scrollHeight;
-                    break;
-                case 'fixed':
-                    chatBox.scrollTop = this._scrollTop;
-            }
-        }
-    }
 
-    setScrollStrategy(strategy) {
-        this._scrollStrategy = strategy;
-    }
-
-    addOne(data) {
-        Object.assign(this.data, data);
-    }
 }
+
+
+
+

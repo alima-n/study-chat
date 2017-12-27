@@ -26,6 +26,9 @@ form input[type="submit"]{
     font-weight: bold;
     background: #F2F5F8;
 }
+form input[type="submit"]:focus{
+    outline: 1px solid #75b1e8;
+}
 .fileContainer{
     overflow: hidden;
     position: relative;

@@ -6,20 +6,18 @@ export class Form {
     }
 
     render() {
-        this.el.innerHTML = `
-            <form class="clearfix">
-                <textarea placeholder="Введите сообщение"></textarea>
-                <label class="fileContainer">
-                    <input type="file"/>
-                </label>
-                <input type="submit" value="Отправить"/>
-            </form>
-        `;
+        this.el.innerHTML = this._getHTML();
+    }
+
+    _getHTML() {
+        return formTemplate();
     }
     _onSubmit(event) {
         event.preventDefault();
+        this.textArea = event.target.querySelector('textarea');
         this.onSubmit({
-            text: event.target.querySelector('textarea').value
+            text: this.textArea.value
         });
+        this.textArea.value = null;
     }
 }

@@ -1,5 +1,3 @@
-'use strict';
-
 class Chat {
     constructor() {
         this.target = document.querySelector('#js-app');
@@ -149,5 +147,4 @@ class Chat {
         }
     }
 }
-
 

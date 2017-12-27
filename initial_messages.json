@@ -1,9 +1,22 @@
 {
   "messages" : {
     "-K2ib5JHRbbL0NrztUfO" : {
-      "photoUrl": "https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2017-05-03/178172234645_730ac1a261d34e4f358d_512.png",
-      "message" : "Хоть это и чат с авторизацией, я тут был!",
-      "name" : "Анонимус"
+      "avatar": "https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2017-05-03/178172234645_730ac1a261d34e4f358d_512.png",
+      "text" : "Хоть это и чат с авторизацией, я тут был!",
+      "user" : "Анонимус",
+      "time": 1514295000638
+    },
+    "-L-IpdRFqgW8jOdnLWVe": {
+   	  "avatar": "https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2017-05-03/178172234645_730ac1a261d34e4f358d_512.png",
+      "text" : "Хоть это и чат с авторизацией, я тут был!",
+      "user" : "Тартюфф",
+      "time": 1514296002640
+    },
+    "-L-cJqHJYSPQ0L6wDYaZ": {
+      "avatar": "https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2017-05-03/178172234645_730ac1a261d34e4f358d_512.png",
+      "text" : "Эгегей",
+      "user" : "Жозефина",
+      "time": 1514297002638
     }
   }
 }
