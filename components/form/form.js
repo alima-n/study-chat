@@ -1,8 +1,10 @@
 export class Form {
-    constructor({el, onSubmit}) {
+    constructor({el, onSubmit, onChange}) {
         this.el = el;
         this.onSubmit = onSubmit;
+        this.onChange = onChange;
         this.el.addEventListener('submit', this._onSubmit.bind(this));
+        this.el.addEventListener('change', this._saveImg.bind(this));
     }
 
     render() {
@@ -12,6 +14,7 @@ export class Form {
     _getHTML() {
         return formTemplate();
     }
+
     _onSubmit(event) {
         event.preventDefault();
         this.textArea = event.target.querySelector('textarea');
@@ -19,5 +22,15 @@ export class Form {
             text: this.textArea.value
         });
         this.textArea.value = null;
+    }
+
+    _saveImg(event) {
+        event.preventDefault();
+        this.inputFile = document.querySelector('input');
+        if ( event.target === this.inputFile ) {
+            this.onChange({
+                file: event.target.files[0]
+            })
+        }
     }
 }

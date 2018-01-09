@@ -131,6 +131,7 @@ class Chat {
         if (this.constructor.isSignedIn()) {
             let file = e.target.files[0];
             let currentUser = firebase.auth().currentUser;
+            
             this.messagesInDatabase.push({
                 name: currentUser.displayName,
                 imageUrl: 'http://dev.nurgazieva.com/loader.svg',
@@ -143,8 +144,10 @@ class Chat {
             }).then( function(snapshot) {
                 let fullPath = snapshot.metadata.fullPath;
                 return data.update({imageUrl: firebase.storage().ref(fullPath).toString()});
-            });
+            })
+
         }
     }
 }
+
 

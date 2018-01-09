@@ -3,9 +3,10 @@ export class Messages {
         this.dataRef = firebase.database().ref(dataRef);
     }
 
-    initMessaging({limitToLast = 0, events = [], callBack}) {
+    initMessaging({limitToLast = 0, events = [], callback}) {
         events.forEach( (event) => {
-            return this.dataRef.limitToLast(limitToLast).on(event, callBack.bind(this));
+            return this.dataRef.limitToLast(limitToLast).on(event, callback.bind(this));
         });
     }
 }
+

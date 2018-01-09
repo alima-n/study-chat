@@ -1,4 +1,7 @@
 div.chat
-    div.chat__header Вы зашли в чат как #{user}
+    div.chat__header.clearfix 
+        span.chat__user-info Войдите в чат через аккаунт Gmail
+        button#sign-in Войти
+        button#sign-out(hidden) Выйти
     ul.chat__messages
 
