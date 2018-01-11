@@ -27,7 +27,6 @@ export class Chat {
         let ul = document.querySelector('.chat__messages');
         let message = document.getElementById(data.key);
         if ( !message ) {
-            
             let message = document.createElement('div');
             if ( val.user === firebase.auth().currentUser.displayName ) {
                 message.classList.add('is-mine');
@@ -40,7 +39,7 @@ export class Chat {
                 .then( () => message.innerHTML = messageTemplate({key: data.key, user: val.user, text: val.text, time: val.time, url: url}) )
                 .then( () => {
                     let img = message.querySelector('img');
-                    img.addEventListener('load', () => ul.scrollTop = ul.scrollHeight)
+                    img.addEventListener('load', () => ul.scrollTop = ul.scrollHeight);
                 });
             }
             ul.append(message);
